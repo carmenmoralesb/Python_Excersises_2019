@@ -1,0 +1,129 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+diccionarioliga = [
+  {
+      'Nombre': ['Chiclana','Blues','Chiclana Blues', 'CHB'],
+      'PJ': 0,
+      'PG': 0,
+      'PP': 0,
+      'PAF': 0,
+      'PEC': 0,
+      'MAR': 0,
+      
+   },
+   {
+    'Nombre': ['Cadiz','Wheels','Cadiz Wheels', 'CAW'],
+    'PJ': 0,
+    'PG': 0,
+    'PP': 0,
+    'PAF': 0,
+    'PEC': 0,
+    'MAR': 0,
+   },
+    {
+      'Nombre':['Caleta','Surfers','Caleta Surfers', 'CSU'],
+      'PJ': 0,
+      'PG': 0,
+      'PP': 0,
+      'PAF': 0,
+      'PEC': 0,
+      'MAR': 0,
+    },
+    {
+      'Nombre': ['Conil','Suns','Conil Suns', 'COS'],
+      'PJ': 0,
+      'PG': 0,
+      'PP': 0,
+      'PAF': 0,
+      'PEC': 0,
+      'MAR': 0,
+    },
+    {
+      'Nombre': ['Victoria','Bedouins','Victoria Bedouins', 'VIB'],
+      'PJ': 0,
+      'PG': 0,
+      'PP': 0,
+      'PAF': 0,
+      'PEC': 0,
+      'MAR': 0,
+    },
+    
+    {
+      'Nombre': ['Cortadura','Hearts','Cortadura Hearts','CHE'],
+      'PJ': 0,
+      'PG': 0,
+      'PP': 0,
+      'PAF': 0,
+      'PEC': 0,
+      'MAR': 0,
+    },
+]
+
+# muestra la clasificacion
+
+# clasificacion
+
+for dic in diccionarioliga:
+    for k,v in dic.items():
+        print(k,v)
+
+
+# hay que meter puntuacion de dos partidos y luego actualizar el diccionario
+
+while True:
+   resultado = input("Introduce resultado, el resultado debe ser una cadena como Cortadura Hearts 27 VIB 60: ") # puntuacion del local
+
+# TRATAMIENTO DE LA CADENA RESULTADO
+
+   if resultado != 'fin':
+      resultadoseparado = resultado.split(" ")
+      
+      puntuaciones = []
+      equipos = []
+      posiciones = []
+      
+      for elemento in resultadoseparado:
+          if elemento.isnumeric():
+              puntuaciones.append(elemento)
+              posicion = resultadoseparado.index(elemento)
+              posiciones.append(posicion)
+              
+      equipolocal = resultadoseparado[:posiciones[0]]
+      equipovisitante = resultadoseparado[posiciones[0]+1:posiciones[1]]  # con este slice saco lso nombres de los equipos auqnue solo acepta un formato de puntuacion
+      
+      equipolocalstring = ' '.join(equipolocal)
+      equipovisitantestring = ' '.join(equipovisitante)
+      
+      puntuacionlocal = int(puntuaciones[0])
+      puntuacionvisitante = int(puntuaciones[1])
+
+      # AÑADIENDO LOS DATOS
+
+      for dic in diccionarioliga:
+          if equipolocalstring in dic['Nombre']:
+              dic['PJ'] += 1
+
+              dic['PAF'] += puntuacionlocal
+              dic['PEC'] += puntuacionvisitante
+              dic['MAR'] += (dic['PAF']-dic['PEC']) / (dic['PJ'])
+              
+              if puntuacionlocal > puntuacionvisitante:
+                  dic['PG'] += 1
+              else:
+                  dic['PP'] += 1
+
+          if equipovisitantestring in dic['Nombre']:
+              dic['PJ'] += 1
+
+              dic['PAF'] += puntuacionvisitante
+              dic['MAR'] += (dic['PAF']- dic['PEC']) / (dic['PJ'])
+              
+              if puntuacionlocal < puntuacionvisitante:
+                  dic['PG'] += 1
+              else:
+                  dic['PP'] += 1
+              
+   else:
+       break
+

@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+import random
+listapalabras = ['cerillas', 'patrulla', 'papel', 'azor',
+                 'alerones', 'conversar', 'sollozo', 'manzana']
+tusletras = ''
+intentos = 5
+palabrasecreta = random.choice(listapalabras)
+print('_ ' * len(palabrasecreta))
+
+while intentos > 0:
+    letrasfaltan = 0
+    tuletra = input('\n' + "Introduce letra: ")
+    tusletras += tuletra 
+
+    if len(tuletra) > 1:
+        print("Escribe solo una letra por favor")
+
+    else:
+        for letra in palabrasecreta:  # para cada letra en palabra
+            if letra not in tusletras:  # si la letra no esta en tupalabra
+                print("_ ", end="")  # se escribe un guion
+                letrasfaltan += 1
+            else:  # si esta escribe la letra
+                print(letra, end="")
+                
+        if letrasfaltan == 0:
+            print("")
+            print("Has ganado")
+            break
+        if tuletra not in palabrasecreta:
+            intentos -= 1
+            print(" Te has equivocado, te quedan " + str(intentos) + " intentos")
+        else:
+            print(" Bien, hay una " + tuletra)
+        if intentos == 0:
+            print(" Has perdido, la solución era " + palabrasecreta)
+

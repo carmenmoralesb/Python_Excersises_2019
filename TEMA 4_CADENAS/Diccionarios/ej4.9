@@ -1,0 +1,101 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+agenda = {'Hospital Puerta del Mar': '+349565875214', 'Marruzella Cádiz': '+34956557514','Hospital San Carlos': '+34995178','Hospital San Carlos': '+349565284','Marruzella Jerez': '+395987584'}
+
+print("Programa de agenda telefónica")
+print(" Si das como comando consulta + texto: buscará si el contacto existe \n Si das como comando listado: listará los números de teléfono por orden\n Si das como comando adios: saldrá del programa")
+
+try:
+    comando = input("Introduce un número de teléfono, un nombre o una instrucción: ")
+
+    if 'consulta' in comando:
+        comando = comando.split(" ")
+        # print(comando)
+        consulta = comando[1]
+        contactos = agenda.keys()
+        contador = 0
+
+        for contacto in contactos:
+            if comando[1] in contacto:      
+                contador += 1  
+                print(contacto,agenda.get(contacto))      
+        print("Se han encontrado " + str(contador) + " coincidencias")
+                     
+    elif comando == 'listado':
+        lista = list(agenda.items())
+        lista.sort()
+        contador = 0
+
+        for contacto in lista:
+            contador += 1
+            print(str(contador) + ":{} {}".format(*contacto))
+
+    elif comando == 'adios':
+        print("Adiós, usuario")
+        
+    else:        # es un contacto
+        if comando[0].isalpha(): # se mira si el primer elemento es una letra
+            print("Es un nombre de contacto")
+            
+            if comando not in agenda: # si no esta en la agenda
+               telefono = input("Se añadirá este contacto, escribe el número de teléfono: ")
+               telefono = telefono.replace(" ","") # pide un telefono
+
+               if telefono.isdigit() == True: # si el telefono es valido lo guarda
+                   agenda[str(comando)] = telefono
+                   print("¡Contacto añadido!") 
+               else:
+                   print("No es un número válido")
+               
+               if '+' in telefono: # lo mismo si se pone prefijo
+                   telefono = telefono.split('+') # Comprobación de que el número que se quiere guardar es correcto
+                   telefono = telefono[1] 
+
+                   if telefono.isnumeric():
+                       agenda[str(comando)] = telefono
+                       print("¡Contacto añadido!") 
+                   else:
+                       print("No es un número válido")
+
+
+               else:
+                   print("No es un teléfono válido")
+               
+            else:
+                print("Contacto encontrado")
+                contactos = agenda.keys()
+                   
+                for contacto in contactos:
+                    if comando in contacto:
+                        print(contacto,agenda.get(contacto))    
+                           
+        else:
+            print("Es un teléfono")
+            # print(contactos)
+            comando = comando.replace(' ','')
+
+            if '+' in comando:  # se mira si el telefono es valido
+                comando = comando.split('+')
+                telefonoprefi = comando[1]
+            else:
+                telefonoprefi = comando
+            
+            if telefonoprefi.isnumeric():
+                contactos = agenda.values() 
+                print("Es un número válido")        
+                for numero in contactos:
+                    if telefonoprefi in numero == False: # si no existe se añade a la agenda
+                        print("Número no existente, se añadirá a la agenda")
+                        nombre = input("Añade el nombre del contacto: ")
+                        agenda[nombre] = comando
+                        print("Contacto añadido")
+                    else:
+                        for nombre, numero in agenda.items(): # si existe muestra el contacto con el numero
+                            if numero == comando:
+                                print(nombre, numero)
+
+# comprobar si empieza por +
+            
+except ValueError:
+    print("Ha habido un error")

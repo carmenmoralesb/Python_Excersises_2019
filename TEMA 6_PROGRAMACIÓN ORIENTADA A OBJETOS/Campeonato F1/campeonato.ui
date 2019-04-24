@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="ttk.Frame" id="principal">
+    <property name="height">202</property>
+    <property name="padding">10</property>
+    <property name="width">200</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="tk.Button" id="BtnAnadirResultado">
+        <property name="anchor">n</property>
+        <property name="command">anadir_resultado</property>
+        <property name="compound">right</property>
+        <property name="font">TkDefaultFont</property>
+        <property name="overrelief">flat</property>
+        <property name="state">active</property>
+        <property name="text" translatable="yes">Añadir resultado
+</property>
+        <layout>
+          <property name="column">5</property>
+          <property name="propagate">False</property>
+          <property name="row">0</property>
+          <property name="sticky">n</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Radiobutton" id="calendario">
+        <property name="command">rEleccion</property>
+        <property name="text" translatable="yes">Calendario de circuitos</property>
+        <property name="value">1</property>
+        <property name="variable">int:eleccion</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">5</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">w</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Radiobutton" id="pilotos">
+        <property name="command">rEleccion</property>
+        <property name="text" translatable="yes">Clasificación individual</property>
+        <property name="value">2</property>
+        <property name="variable">int:eleccion</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">5</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+          <property name="sticky">w</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Radiobutton" id="escuderias">
+        <property name="command">rEleccion</property>
+        <property name="text" translatable="yes">Clasificación por escuderías</property>
+        <property name="value">3</property>
+        <property name="variable">int:eleccion</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">5</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+          <property name="sticky">w</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="tk.Text" id="salida">
+        <property name="height">23</property>
+        <property name="setgrid">false</property>
+        <property name="width">100</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="pady">10</property>
+          <property name="propagate">True</property>
+          <property name="row">3</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+  <object class="ttk.Frame" id="escuderias_1">
+    <property name="height">200</property>
+    <property name="width">200</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="ttk.Label" id="lbEscuderias">
+        <property name="compound">bottom</property>
+        <property name="text" translatable="yes">Escuderias</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbPilotos">
+        <property name="text" translatable="yes">Pilotos</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Treeview" id="tvEscuderia">
+        <property name="selectmode">extended</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">20</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Treeview" id="tvPiloto">
+        <property name="selectmode">extended</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+  <object class="ttk.Frame" id="resultados">
+    <property name="cursor">based_arrow_down</property>
+    <property name="height">200</property>
+    <property name="width">200</property>
+    <layout>
+      <property name="column">0</property>
+      <property name="padx">10</property>
+      <property name="pady">10</property>
+      <property name="propagate">True</property>
+      <property name="row">0</property>
+    </layout>
+    <child>
+      <object class="ttk.Label" id="lbCircuitos">
+        <property name="compound">top</property>
+        <property name="cursor">arrow</property>
+        <property name="font">TkDefaultFont</property>
+        <property name="takefocus">false</property>
+        <property name="text" translatable="yes">Circuitos</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">False</property>
+          <property name="row">0</property>
+          <property name="sticky">nw</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Label" id="lbFechaCircuito">
+        <property name="text" translatable="yes">Fecha
+</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Entry" id="fecha">
+        <property name="cursor">arrow</property>
+        <property name="exportselection">true</property>
+        <property name="justify">center</property>
+        <property name="takefocus">true</property>
+        <property name="text" translatable="yes">
+</property>
+        <property name="textvariable">string:var_fecha</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">n</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Combobox" id="cmbCircuito">
+        <property name="cursor">arrow</property>
+        <property name="width">30</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="padx">80</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btnAceptar">
+        <property name="command">comprobar</property>
+        <property name="default">active</property>
+        <property name="text" translatable="yes">Aceptar</property>
+        <layout>
+          <property name="column">3</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="sticky">n</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btnAnadirPiloto">
+        <property name="command">btnAnadirPiloto</property>
+        <property name="text" translatable="yes">&gt;&gt;</property>
+        <property name="width">5</property>
+        <layout>
+          <property name="column">1</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+          <property name="sticky">w</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Button" id="btnQuitarPiloto">
+        <property name="command">btnQuitarPiloto</property>
+        <property name="default">active</property>
+        <property name="text" translatable="yes">&lt;&lt;</property>
+        <property name="width">5</property>
+        <layout>
+          <property name="column">2</property>
+          <property name="propagate">True</property>
+          <property name="row">2</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Treeview" id="tvPilotos">
+        <property name="selectmode">extended</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="propagate">False</property>
+          <property name="row">1</property>
+          <property name="sticky">w</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Treeview" id="tvResultados">
+        <property name="selectmode">extended</property>
+        <layout>
+          <property name="column">3</property>
+          <property name="propagate">False</property>
+          <property name="row">1</property>
+        </layout>
+      </object>
+    </child>
+  </object>
+</interface>

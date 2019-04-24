@@ -1,0 +1,18 @@
+Algoritmo Raiz_Aproximada
+	Definir raizaprox,num Como Entero
+	Escribir 'Escribe un numero para calcular su raíz aproximada: ';
+	Leer num;
+	contador<-0
+	raizaprox <- 0	
+	Mientras contador*contador < num
+		contador <- contador+1
+		si contador*contador es igual a num
+			escribir 'La raiz cuadrada es ', contador
+		Fin si
+	    Si contador*contador es mayor a num
+		   escribir 'la raiz cuadrada aproximada es ',contador
+		FinSi
+	Fin Mientras
+	
+	//Ya he puesto que deje de contar en cuanto sea mayor, por lo que la raiz aproximada de 20 seria 5 //
+Fin Algoritmo

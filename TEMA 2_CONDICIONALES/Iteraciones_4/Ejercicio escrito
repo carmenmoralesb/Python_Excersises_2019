@@ -1,0 +1,73 @@
+2.31:
+
+El print se ejecuta 13 veces, el número de
+veces que la variable de control i es divisible entre 8.
+a a a a a a a a a a a a a
+
+2.33:
+
+2000: si
+2010: no
+2012: si
+2100: no
+
+si es divisible entre 400 o lo es de 4 y no de 100 imprime si, es un programa que dice
+que año es bisiesto y cual no, el divisor if not evalua como False si el año no es divisible entre 400 o de 4.
+
+2.34:
+
+a = 3   si
+
+
+a = 8   no   
+
+n 2
+n 3
+n 4
+n 5
+n 6
+n 7
+
+
+a = 13
+
+n 2 
+n 3
+n 4
+n 5
+n 6
+n 7
+n 8 . . .
+
+
+El programa te dice si un número es primo o no, teniendo este de divisor el 1 y a si mismo.
+
+2.34:
+
+n = 3
+
+n = aaa
+
+n = 6
+
+2.35:
+
+Si n=3 o n=aa (es lo mismo ya que si llega al except por no ser un numero n es igual a 3)
+
+򪪪򪪪򪪪*
+򪪪򪪪***
+򪪪*****
+򪪪򪪪***
+
+si n = 6
+
+򪪪򪪪򪪪򪪪򪪪򪪪*
+򪪪򪪪򪪪򪪪򪪪***
+򪪪򪪪򪪪򪪪*****
+򪪪򪪪򪪪*******
+򪪪򪪪*********
+򪪪***********
+򪪪򪪪򪪪򪪪򪪪***
+
+Donde 򪪪 es el espacio en blanco (el  valor n decrementando)
+y los asteriscos donde a=1 inicialmente y va aumentando su valor en 2 a medida que se realiza la iteración.

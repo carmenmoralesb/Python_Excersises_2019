@@ -1,0 +1,63 @@
+Algoritmo diasiguiente
+	Definir dia Como Entero
+	Definir mes Como Entero
+	Definir anio Como Entero
+	Escribir 'el dia :'
+	Leer dia
+	Escribir 'el mes :'
+	Leer mes
+	Escribir 'el anio :'
+	Leer anio
+	dia <- dia
+	mes <- mes
+	anio <- anio
+	Si (mes)=(1) Entonces
+		numdias <- 31
+	FinSi
+	Si (mes)=(2) Entonces
+		numdias <- 28
+	FinSi
+	Si (mes)=(3) Entonces
+		numdias <- 31
+	FinSi
+	Si (mes)=(4) Entonces
+		numdias <- 30
+	FinSi
+	Si (mes)=(5) Entonces
+		numdias <- 31
+	FinSi
+	Si (mes)=(6) Entonces
+		numdias <- 30
+	FinSi
+	Si (mes)=(7) Entonces
+		numdias <- 31
+	FinSi
+	Si (mes)=(8) Entonces
+		numdias <- 31
+	FinSi
+	Si (mes)=(9) Entonces
+		numdias <- 30
+	FinSi
+	Si (mes)=(10) Entonces
+		numdias <- 31
+	FinSi
+	Si (mes)=(11) Entonces
+		numdias <- 30
+	FinSi
+	Si (mes)=(12) Entonces
+		numdias <- 31
+	FinSi
+	Si (dia)=(numdias) Entonces
+		mes <- mes+1
+		dia <- 1
+	SiNo
+		dia <- dia+1
+	FinSi
+	Si (mesdespues)=(12) Entonces
+		anio <- anio+1
+		mes <- 1
+	FinSi
+	Escribir 'el dia despues es:',dia,'/',mes,'/',anio
+	// ya he puesto los dias que tiene cada mes sin contar bisiestos//
+FinAlgoritmo
+
