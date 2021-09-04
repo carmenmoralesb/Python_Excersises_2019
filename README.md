@@ -1,4 +1,4 @@
-# <em> Python exercises course 2019/2020 Python </em>: heart:: snake:
+# <em> Python exercises course 2019/2020 Python </em> :heart: snake:
 
  <img src = "https://dyclassroom.com/image/topic/python/logo.png">
  
