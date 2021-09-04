@@ -1,15 +1,15 @@
-# <em>Ejercicios python curso 2019/2020 Python</em> :heart: :snake:
+# <em> Python exercises course 2019/2020 Python </em>: heart:: snake:
 
- <img src="https://dyclassroom.com/image/topic/python/logo.png">
+ <img src = "https://dyclassroom.com/image/topic/python/logo.png">
  
- Ejercicios solucionados del curso de programación 2019 del I.E.S Rafael Alberti
+ Exercises solved from the 2019 I.E.S Rafael Alberti programming course
 
  
-## Contenidos
-1. Elementos de un programa
-2. Condicionales
-3. Funciones
-4. Cadenas
-5. Ficheros
-6. POO
+## Contents
+1. Elements of a program
+2. Conditionals
+3. Functions
+4. Chains
+5. Files
+6. OOP
 7. SQL
