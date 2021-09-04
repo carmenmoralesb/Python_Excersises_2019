@@ -9,7 +9,7 @@
 1. Elements of a program
 2. Conditionals
 3. Functions
-4. Chains
+4. Strings
 5. Files
 6. OOP
 7. SQL
